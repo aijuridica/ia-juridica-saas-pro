@@ -1,5 +1,5 @@
 from fastapi import FastAPI
 app = FastAPI()
+
 @app.get("/")
-def read_root():
-  return {"status": "Backend IA Jurídica SaaS rodando com sucesso!"}
+def root(): return {"message": "Backend IA Jurídica SaaS PRO ativo"}
