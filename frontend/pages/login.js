@@ -13,85 +13,37 @@ export default function Login() {
   };
 
   return (
-<div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    background: 'linear-gradient(135deg, #4E73DF, #224ABE)',
-    fontFamily: 'Poppins, sans-serif',
-}}>
-    <div style={{
-        padding: '3rem',
-        background: '#fff',
-        borderRadius: '10px',
-        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-        width: '400px',
-        textAlign: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    }}>
-        <h1 style={{ color: '#224ABE' }}>Login - IA Jurídica SaaS PRO</h1>
-        <form onSubmit={handleLogin} style={{ marginTop: '2rem', width: '100%' }}>
-            <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
-                <label style={{ fontWeight: '600' }}>Email:</label><br />
+<div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
+        <h1>Login - IA Jurídica SaaS PRO</h1>
+        <form onSubmit={handleLogin} style={{ marginTop: '2rem' }}>
+            <div>
+                <label>Email:</label><br />
                 <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    style={{
-                        width: '100%',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        border: '1px solid #ccc',
-                    }}
                 />
             </div>
 
-            <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
-                <label style={{ fontWeight: '600' }}>Senha:</label><br />
+            <div style={{ marginTop: '1rem' }}>
+                <label>Senha:</label><br />
                 <input
                     type="password"
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
                     required
-                    style={{
-                        width: '100%',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        border: '1px solid #ccc',
-                    }}
                 />
             </div>
 
-            <button type="submit" style={{
-                marginTop: '1rem',
-                padding: '12px',
-                width: '100%',
-                background: '#224ABE',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '5px',
-                fontSize: '16px',
-                cursor: 'pointer',
-                transition: '0.3s',
-            }}>
-                Entrar
-            </button>
+            <button type="submit" style={{ marginTop: '2rem' }}>Entrar</button>
         </form>
 
         <div style={{ marginTop: '1rem' }}>
-            <Link href="/register" style={{ color: '#4E73DF', fontWeight: '600' }}>
+            <Link href="/register">
                 Ainda não tem conta? <b>Cadastre-se aqui</b>
             </Link>
         </div>
     </div>
-</div>
-
 );
 }
-
-
-
