@@ -1,1 +1,4 @@
-export default function Header() { return <header>Bem-vindo ao IA Jurídica SaaS PRO</header> }
+
+export default function Header() {
+  return <header><h2>IA Jurídica SaaS PRO</h2></header>;
+}
