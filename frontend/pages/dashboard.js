@@ -22,7 +22,7 @@ export default function Dashboard() {
 
         <h2>Seus módulos:</h2>
         <ul style={{ listStyleType: 'none', padding: 0 }}>
-          <li><button onClick={() => handleModuleClick('peticoes')}>🔎 Análise de Petições</button></li>
+          <li><button onClick={() => handleModuleClick('gerar-peticao')}>🔎 Análise de Petições</button></li>
           <li><button onClick={() => handleModuleClick('documentos')}>📄 Geração Automatizada de Documentos</button></li>
           <li><button onClick={() => handleModuleClick('relatorios')}>📊 Relatórios e Métricas</button></li>
           <li><button onClick={() => handleModuleClick('jurisprudencia')}>⚖️ IA de Jurisprudência</button></li>
