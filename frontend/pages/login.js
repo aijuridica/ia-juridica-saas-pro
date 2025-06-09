@@ -28,10 +28,13 @@ export default function Login() {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
         width: '400px',
         textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     }}>
         <h1 style={{ color: '#224ABE' }}>Login - IA Jurídica SaaS PRO</h1>
-        <form onSubmit={handleLogin} style={{ marginTop: '2rem' }}>
-            <div style={{ marginBottom: '1rem' }}>
+        <form onSubmit={handleLogin} style={{ marginTop: '2rem', width: '100%' }}>
+            <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
                 <label style={{ fontWeight: '600' }}>Email:</label><br />
                 <input
                     type="email"
@@ -47,7 +50,7 @@ export default function Login() {
                 />
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
+            <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
                 <label style={{ fontWeight: '600' }}>Senha:</label><br />
                 <input
                     type="password"
