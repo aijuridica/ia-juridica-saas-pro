@@ -13,7 +13,13 @@ export default function Login() {
   };
 
   return (
-<div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
+<div style={{     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    background: 'linear-gradient(135deg, #4E73DF, #224ABE)',
+    fontFamily: 'Poppins, sans-serif',
+ }}>
         <h1>Login - IA Jurídica SaaS PRO</h1>
         <form onSubmit={handleLogin} style={{ marginTop: '2rem' }}>
             <div>
