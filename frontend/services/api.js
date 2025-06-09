@@ -1,7 +1,1 @@
-import axios from "axios";
-
-const api = axios.create({
-  baseURL: "https://www.aijuridica.com.br"
-});
-
-export default api;
+import axios from "axios"; export const api = axios.create({ baseURL: process.env.NEXT_PUBLIC_API_URL });
