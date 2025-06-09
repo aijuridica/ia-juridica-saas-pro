@@ -65,7 +65,7 @@ export default function Home() {
           <Link href="/recursos">Recursos</Link>
           <Link href="/precos">Preços</Link>
           <Link href="/login">Login</Link>
-          <Link href="/cadastro" className="cadastro">Cadastrar-se</Link>
+          <Link href="/register" className="cadastro">Cadastrar-se</Link>
         </NavLinks>
       </Header>
 
@@ -74,7 +74,7 @@ export default function Home() {
           <h1>IA Jurídica SaaS PRO</h1>
           <p>Automatize petições, jurisprudência e documentos com segurança total.</p>
           <div style={{ marginTop: '1rem' }}>
-            <Link href="/cadastro"><button>Começar agora</button></Link>
+            <Link href="/register"><button>Começar agora</button></Link>
             <Link href="/demo" style={{ marginLeft: '1rem' }}><button>Ver demonstração</button></Link>
           </div>
         </div>
