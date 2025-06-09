@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -12,30 +14,36 @@ export default function Login() {
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Login - IA Jurídica SaaS PRO</h1>
-      <form onSubmit={handleLogin} style={{ marginTop: '2rem' }}>
-        <div>
-          <label>Email:</label><br />
-          <input 
-            type="email" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+        <h1>Login - IA Jurídica SaaS PRO</h1>
+        <form onSubmit={handleLogin} style={{ marginTop: '2rem' }}>
+            <div>
+                <label>Email:</label><br />
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div style={{ marginTop: '1rem' }}>
+                <label>Senha:</label><br />
+                <input
+                    type="password"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    required
+                />
+            </div>
+
+            <button type="submit" style={{ marginTop: '2rem' }}>Entrar</button>
+        </form>
 
         <div style={{ marginTop: '1rem' }}>
-          <label>Senha:</label><br />
-          <input 
-            type="password" 
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            required
-          />
+            <Link href="/register">
+                Ainda não tem conta? <b>Cadastre-se aqui</b>
+            </Link>
         </div>
-
-        <button type="submit" style={{ marginTop: '2rem' }}>Entrar</button>
-      </form>
     </div>
-  );
+);
 }
