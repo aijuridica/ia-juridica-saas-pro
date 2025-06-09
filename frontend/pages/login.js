@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import GlobalStyle from '../styles/GlobalStyle';
+import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -12,21 +12,20 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
-        { email, senha }
-      );
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+        email,
+        senha,
+      });
 
-      if (response.status === 200) {
-        const { access_token } = response.data;
-        localStorage.setItem('token', access_token);
+      if (response.data && response.data.token) {
+        localStorage.setItem('token', response.data.token);
         router.push('/dashboard');
       } else {
-        alert('Falha ao fazer login.');
+        alert('Email ou senha inválidos.');
       }
-    } catch (err) {
-      console.error('Erro no login:', err);
-      alert('Erro ao tentar fazer login.');
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+      alert('Ocorreu um erro no login.');
     }
   };
 
@@ -37,7 +36,7 @@ export default function Login() {
       </Head>
       <GlobalStyle />
       <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
-        <h1>Login</h1>
+        <h1>Login IA Jurídica SaaS PRO</h1>
         <form onSubmit={handleLogin} style={{ marginTop: '2rem' }}>
           <div>
             <label>Email:</label><br />
@@ -48,7 +47,6 @@ export default function Login() {
               required
             />
           </div>
-
           <div style={{ marginTop: '1rem' }}>
             <label>Senha:</label><br />
             <input
@@ -58,10 +56,7 @@ export default function Login() {
               required
             />
           </div>
-
-          <button type="submit" style={{ marginTop: '2rem' }}>
-            Entrar
-          </button>
+          <button type="submit" style={{ marginTop: '2rem' }}>Entrar</button>
         </form>
       </div>
     </>
